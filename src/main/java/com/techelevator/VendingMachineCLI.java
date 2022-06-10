@@ -3,6 +3,8 @@ package com.techelevator;
 import com.techelevator.view.Inventory;
 import com.techelevator.view.Menu;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 public class VendingMachineCLI {
@@ -18,20 +20,20 @@ public class VendingMachineCLI {
 		this.menu = menu;
 	}
 
-	public void run() {
+	public void run() throws FileNotFoundException {
 		while (true) {
 			String choice = (String) menu.getChoiceFromOptions(MAIN_MENU_OPTIONS);
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
-				Inventory inventory = new Inventory();
-				inventory.displayList();//System.out.println(inventory.stockList());// display vending machine items
+				Inventory inventory = new Inventory(new File("vendingmachine.csv"));
+				inventory.displayInventory();//System.out.println(inventory.stockList());// display vending machine items
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				// do purchase
 			}
 		}
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		Menu menu = new Menu(System.in, System.out);
 		VendingMachineCLI cli = new VendingMachineCLI(menu);
 		cli.run();

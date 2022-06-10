@@ -8,56 +8,53 @@ import java.util.Scanner;
 
 
 public class Inventory {
-    public void setSnackList(List<Snack> snackList) {
-        this.snackList = snackList;
+    final File INVENTORY_FILE;
+    private List<Snack> snackList = new ArrayList<>();
+
+    public Inventory(File Inventory){
+        this.INVENTORY_FILE = Inventory;
+        try{
+            this.stockList();
+        }catch (FileNotFoundException e){
+
+        }
     }
-    public Inventory(){
-        this.stockList();
+    public void stockList() throws FileNotFoundException{
+        try(Scanner scan = new Scanner(INVENTORY_FILE)){
+            while(scan.hasNextLine()){
+                String line = scan.nextLine();
+                String [] splitUp = line.split("\\|");
+
+                if(splitUp[3].contentEquals("Chip")){
+                    Snack s = new Chip (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    snackList.add(s);
+                }
+                if(splitUp[3].contentEquals("Candy")){
+                    Snack s = new Candy (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    snackList.add(s);
+                }
+                if(splitUp[3].contentEquals("Drink")){
+                    Snack s = new Drinks (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    snackList.add(s);
+                }
+                if(splitUp[3].contentEquals("Gum")){
+                    Snack s = new Gum (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    snackList.add(s);
+                }
+            }
+        }
     }
-    private  List<Snack> snackList = new ArrayList<>();
-    File inventoryFile;
-    //Scanner scan = new Scanner("vendingmachine.csv");
- public void stockList()  {
-     try (Scanner scan = new Scanner("vendingmachine.csv")){
-         while (scan.hasNextLine()){
-             String line = scan.nextLine();
-             String [] split = line.split("|");
-             if (split[3].equalsIgnoreCase("Chip"))
-             {
-                 Chip c = new Chip(split[0],split[1],Double.parseDouble(split[2]));
-                 snackList.add(c);
-             }
-             if (split[3].equals("Candy"))
-             {
-                 Candy c = new Candy(split[0],split[1],Double.parseDouble(split[2]));
-                 snackList.add(c);
-             }
-             if (split[3].equals("Gum"))
-             {
-                 Gum g = new Gum(split[0],split[1],Double.parseDouble(split[2]));
-                 snackList.add(g);
-             }
-             if (split[3].equals("Drink"))
-             {
-                 Drinks d = new Drinks(split[0],split[1],Double.parseDouble(split[2]));
-                 snackList.add(d);
-             }
+    public List<Snack> getInventory(){
+        return snackList;
+    }
+    public void displayInventory(){
 
-                                //System.out.println(line);
-         }
-
-     }
-     catch(Exception e){
-         System.err.println("Does not exist");
-     }
- }
- public void displayList(){
-     for ( Snack snack : snackList){
-         System.out.println(snack.getLocation());
-         System.out.println(snack.getName());
-         System.out.println(snack.getPrice());
-         System.out.println(snack.getQuanitity());
-     }
- }
-
+        for(Snack snack : snackList){
+            System.out.println(snack.getLocation() + " ");
+            System.out.println(snack.getName() + " ");
+            System.out.println(snack.getPrice() + " ");
+            System.out.println(snack.getQuanitity() + "\n");
+        }
+    }
 }
+
