@@ -46,6 +46,9 @@ public class Inventory {
             }
         }
     }
+
+
+
     public List<Snack> getInventory(){
         return snackList;
     }

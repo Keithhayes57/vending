@@ -1,5 +1,7 @@
 package com.techelevator.view;
 
+import java.util.List;
+
 public abstract class Snack {
     public abstract String sounds();
     private String name;
@@ -27,7 +29,12 @@ public abstract class Snack {
     public double getPrice() {
         return price;
     }
+
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }

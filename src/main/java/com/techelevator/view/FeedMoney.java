@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class FeedMoney {
     double totalMoney = 0;
+    boolean YOrN = true;
     public double FeedMoney(){
-        boolean YOrN = true;
+
         if(YOrN == true) {
             System.out.println("Enter the amount of money you fed the machine? ($1, $2, $5, $10 :");
             Scanner feedScan = new Scanner(System.in);
@@ -26,5 +27,9 @@ public class FeedMoney {
         }
         return totalMoney;
 
+    }
+
+    public boolean isYOrN() {
+        return YOrN;
     }
 }
