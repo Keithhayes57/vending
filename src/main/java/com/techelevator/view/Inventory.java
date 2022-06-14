@@ -3,13 +3,14 @@ package com.techelevator.view;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 
 public class Inventory {
     final File INVENTORY_FILE;
-    private List<Snack> snackList = new ArrayList<>();
+    private List<Snack> snackList = new ArrayList<>(); // make a string list ?
 
     public Inventory(File Inventory){
         this.INVENTORY_FILE = Inventory;
@@ -26,8 +27,9 @@ public class Inventory {
                 String [] splitUp = line.split("\\|");
 
                 if(splitUp[3].contentEquals("Chip")){
-                    Snack s = new Chip (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
-                    snackList.add(s);
+                    Snack s = new Chip (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));// make a snack LinkedList instead?
+
+                    snackList.add(s); // * if snackList is a string list  then snackList.add(line)
                 }
                 if(splitUp[3].contentEquals("Candy")){
                     Snack s = new Candy (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
@@ -50,10 +52,11 @@ public class Inventory {
     public void displayInventory(){
 
         for(Snack snack : snackList){
-            System.out.println(snack.getLocation() + " ");
-            System.out.println(snack.getName() + " ");
-            System.out.println(snack.getPrice() + " ");
-            System.out.println(snack.getQuanitity() + "\n");
+
+            System.out.print(snack.getLocation() + " ");
+            System.out.print(snack.getName() + " ");
+            System.out.print("$" + snack.getPrice() + " ");
+            System.out.print( "Quantity : " + snack.getQuantity() + "\n");
         }
     }
 }

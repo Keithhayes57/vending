@@ -8,9 +8,9 @@ public abstract class Snack {
 
 
 
-    private int quanitity = 5;
+    private int quantity = 5;
 
-    public Snack(String name, String location, double price) {
+    public Snack(String location, String name, double price) {
         this.name = name;
         this.location = location;
         this.price = price;
@@ -27,7 +27,7 @@ public abstract class Snack {
     public double getPrice() {
         return price;
     }
-    public int getQuanitity() {
-        return quanitity;
+    public int getQuantity() {
+        return quantity;
     }
 }

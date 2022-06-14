@@ -14,7 +14,13 @@ public class Menu {
 		this.out = new PrintWriter(output);
 		this.in = new Scanner(input);
 	}
-
+	public static void purchaseMenu(){
+		System.out.println("1) Feed Money");
+		System.out.println("2) Select Product");
+		System.out.println("3) Finish Transaction");
+		System.out.println();
+		System.out.println("Current Money : ");
+	}
 	public Object getChoiceFromOptions(Object[] options) {
 		Object choice = null;
 		while (choice == null) {
@@ -24,7 +30,7 @@ public class Menu {
 		return choice;
 	}
 
-	private Object getChoiceFromUserInput(Object[] options) {
+	public Object getChoiceFromUserInput(Object[] options) { // Change access modification
 		Object choice = null;
 		String userInput = in.nextLine();
 		try {
@@ -41,13 +47,14 @@ public class Menu {
 		return choice;
 	}
 
-	private void displayMenuOptions(Object[] options) {
+	public void displayMenuOptions(Object[] options) {
 		out.println();
 		for (int i = 0; i < options.length; i++) {
 			int optionNum = i + 1;
 			out.println(optionNum + ") " + options[i]);
 		}
-		out.print(System.lineSeparator() + "Please choose an option >>> ");
+		out.print(System.lineSeparator() + "Please choose an option >>> "); // instead display the balance when override in PurchaseMenu
 		out.flush();
 	}
+
 }
