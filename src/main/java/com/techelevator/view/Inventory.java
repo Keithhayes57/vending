@@ -27,20 +27,20 @@ public class Inventory {
                 String [] splitUp = line.split("\\|");
 
                 if(splitUp[3].contentEquals("Chip")){
-                    Snack s = new Chip (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));// make a snack LinkedList instead?
+                    Snack s = new Chip (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]),5);// make a snack LinkedList instead?
 
                     snackList.add(s); // * if snackList is a string list  then snackList.add(line)
                 }
                 if(splitUp[3].contentEquals("Candy")){
-                    Snack s = new Candy (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    Snack s = new Candy (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]),5);
                     snackList.add(s);
                 }
                 if(splitUp[3].contentEquals("Drink")){
-                    Snack s = new Drinks (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    Snack s = new Drinks (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]),5);
                     snackList.add(s);
                 }
                 if(splitUp[3].contentEquals("Gum")){
-                    Snack s = new Gum (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]));
+                    Snack s = new Gum (splitUp[0], splitUp[1], Double.parseDouble(splitUp[2]),5);
                     snackList.add(s);
                 }
             }

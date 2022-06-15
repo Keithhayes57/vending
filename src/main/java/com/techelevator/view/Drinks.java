@@ -6,7 +6,7 @@ public class Drinks extends Snack{
         return "Glug Glug, Yum!";
     }
 
-    public Drinks(String name, String location, double price) {
-        super(name, location, price);
+    public Drinks(String name, String location, double price, int quantity) {
+        super(name, location, price, quantity);
     }
 }

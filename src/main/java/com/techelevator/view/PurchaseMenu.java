@@ -13,6 +13,7 @@ public class PurchaseMenu extends Menu {
     public static final String[] PURCHASE_MAIN_MENU_OPTIONS = { Purchase_MAIN_MENU_OPTION_FEED_MONEY, PURCHASE_MAIN_MENU_OPTION_SELECT_PRODUCT, PURCHASE_MAIN_MENU_OPTIONS_FINISH_TRANSACTION };
     private double balance = 0;
     private Scanner input = new Scanner(System.in);
+    private Inventory inventory = new Inventory(new File("capstone-1/vendingmachine.csv"));
 
     public double getBalance() {
         return balance;
@@ -56,7 +57,6 @@ public class PurchaseMenu extends Menu {
     }
 
     public void secondOption(){
-        Inventory inventory = new Inventory(new File("capstone-1/vendingmachine.csv"));
         inventory.displayInventory();
         System.out.println();
         System.out.println("Enter a location: ");
@@ -69,11 +69,12 @@ public class PurchaseMenu extends Menu {
                     System.out.println("Sold Out");
                 }else if (balance >= menu.getPrice()){
                     balance -= menu.getPrice();
-                    menu.setQuantity(menu.getQuantity()-1);
-                    System.out.println("Here's your " + menu.getName() + ".");
+                    System.out.println("Here's your " + menu.getName());
+                    System.out.println(menu.sounds());
+                    System.out.println();
                     System.out.println("Balance Remaining $" + balance);
                     System.out.println();
-
+                    menu.setQuantity(menu.getQuantity()-1);
                 }else if(balance <= 0){
                     System.out.println("You don't have enough money for " + menu.getName());
                 }else{

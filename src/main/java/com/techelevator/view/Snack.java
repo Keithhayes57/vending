@@ -7,15 +7,13 @@ public abstract class Snack {
     private String name;
     private String location;
     private double price;
+    private int quantity;
 
-
-
-    private int quantity = 5;
-
-    public Snack(String location, String name, double price) {
+    public Snack(String location, String name, double price, int quantity) {
         this.name = name;
         this.location = location;
         this.price = price;
+        this.quantity = quantity;
     }
 
     public String getName() {

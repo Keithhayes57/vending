@@ -6,8 +6,8 @@ public class Candy extends Snack{
         return "Munch Munch, Yum!";
     }
 
-    public Candy(String name, String location, double price) {
-        super(name, location, price);
+    public Candy(String name, String location, double price, int quantity) {
+        super(name, location, price, quantity);
     }
 
 }

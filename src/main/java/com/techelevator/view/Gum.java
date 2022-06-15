@@ -6,7 +6,7 @@ public class Gum extends Snack{
         return "Chew Chew, Yum!";
     }
 
-    public Gum(String name, String location, double price) {
-        super(name, location, price);
+    public Gum(String name, String location, double price, int quantity) {
+        super(name, location, price, quantity);
     }
 }
