@@ -16,8 +16,8 @@ public class VendingMachineCLI {
 	private static final String MAIN_MENU_OPTIONS_EXIT = "Exit";
 	private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTIONS_EXIT};
 	private double balance = 0; // future reference for FEED Money staring balance
-	private Menu menu;
-	private Inventory inventory = new Inventory(new File("vendingmachine.csv"));
+	private final Menu menu;
+	private final Inventory inventory = new Inventory(new File("vendingmachine.csv"));
 
 	FeedMoney feedMoney = new FeedMoney();
 
@@ -53,28 +53,10 @@ public class VendingMachineCLI {
 							System.out.println("Invalid menu choice; try again.");
 							break;
 					}
-				} while (choice.equals(MAIN_MENU_OPTION_PURCHASE));
-//				if(intSelection == 1) {
-//
-//				}else if(intSelection==2){
-//
-//				}else{
-//
-//
-//				}
+				} while (true);
 
-
-				// String purchaseChoice =(String) purchaseMenu.displayMenuOptions();
-				// display balance as well
-				//System.out.println("1) Feed Money"); // then if Select Product -> ( copy line 32-33) -> prompt for location,
-				// SHOULD there be another stock inventory Arraylist with a linked list of available items ( peekFirst if null then prompt sold out
-				//System.out.println("2) Select Product"); // if feed money prompt for money plus balance use getBalance
-				// if feed money then ask for valid input then ask if use want to do it again, if y then repeat if n then return to purchase menu 
-				//System.out.println("3) Finish Transaction");
-				//System.out.println();
-				//System.out.println("Current Money :" + balance);
-				// do purchase
-				//
+			}else if(choice.equals(MAIN_MENU_OPTIONS_EXIT)){
+				break;
 			}
 		}
 	}
