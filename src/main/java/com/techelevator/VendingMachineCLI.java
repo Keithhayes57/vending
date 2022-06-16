@@ -16,12 +16,20 @@ public class VendingMachineCLI {
 	private static final String MAIN_MENU_OPTIONS_EXIT = "Exit";
 	private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTIONS_EXIT};
 	private double balance = 0; // future reference for FEED Money staring balance
-	private final Menu menu;
-	private final Inventory inventory = new Inventory(new File("vendingmachine.csv"));
-
+	private Menu menu;
+	private Inventory inventory = new Inventory(new File("vendingmachine.csv"));
+	private Logger log = new Logger();
 	FeedMoney feedMoney = new FeedMoney();
 
 	private PurchaseMenu purchaseMenu = new PurchaseMenu(InputStream.nullInputStream(), OutputStream.nullOutputStream());
+
+	public Inventory getInventory() {
+		return inventory;
+	}
+
+	public PurchaseMenu getPurchaseMenu() {
+		return purchaseMenu;
+	}
 
 	public VendingMachineCLI(Menu menu) {                    // ,purchaseMenu purchaseMenu?
 		this.menu = menu;
@@ -43,19 +51,28 @@ public class VendingMachineCLI {
 							double money = feedMoney.FeedMoney();
 							purchaseMenu.setBalance(money);
 							balance = purchaseMenu.getBalance();
+							log.log("Feed Money: " + " " + money + " $" + purchaseMenu.getBalance() + " "  );
 							break;
 						case 2:
 							purchaseMenu.secondOption();
 						case 3:
+							System.out.println("Your change is $" + purchaseMenu.getBalance());
+							log.log("Give Change : " + "$"+ balance + " " + "$0.00");
+							choice = MAIN_MENU_OPTIONS_EXIT;
 							break;
 
 						default:
 							System.out.println("Invalid menu choice; try again.");
 							break;
 					}
-				} while (true);
+				} while (choice.equals(MAIN_MENU_OPTION_PURCHASE));
+				break;
 
-			}else if(choice.equals(MAIN_MENU_OPTIONS_EXIT)){
+
+
+			}
+			else if(choice.equals(MAIN_MENU_OPTIONS_EXIT)){
+				System.out.println("Bye");
 				break;
 			}
 		}
