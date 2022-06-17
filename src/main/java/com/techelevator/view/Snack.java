@@ -10,8 +10,8 @@ public abstract class Snack {
     private int quantity;
 
     public Snack(String location, String name, double price, int quantity) {
-        this.name = name;
         this.location = location;
+        this.name = name;
         this.price = price;
         this.quantity = quantity;
     }

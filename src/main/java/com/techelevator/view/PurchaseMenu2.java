@@ -15,7 +15,7 @@ public class PurchaseMenu2 {
     private double balance = feed.totalMoney;
 
     private Scanner input = new Scanner(System.in);
-    private Inventory inventory = new Inventory(new File("C:\\Users\\Keithhaye57\\OneDrive\\Desktop\\Week1\\Capstone 615\\capstone-1\\vendingmachine.csv"));
+    private Inventory inventory = new Inventory(new File("/Users/jessegoodrum/Desktop/Merit America/Captstone Try 3/capstone-1/vendingmachine.csv"));
     private Logger log = new Logger();
 
     public double getBalance() {
@@ -32,7 +32,7 @@ public class PurchaseMenu2 {
         System.out.println("2) Select Product");
         System.out.println("3) Finish Transaction");
         System.out.println();
-        System.out.println("Current Money : " + getBalance()); // was balance
+        // was balance
         System.out.println();
         int intSelection = 0;
         System.out.println("Please select 1,2,or 3:");
@@ -52,20 +52,16 @@ public class PurchaseMenu2 {
             if (location.contentEquals(menu.getLocation())) {
                 location = menu.getLocation();
                 if (menu.getQuantity() == 0) {
-                   return "Sold Out";
+                    return "Sold Out";
                 } else if (balance >= menu.getPrice()) {
                     balance -= menu.getPrice();
-                    menu.setQuantity(menu.getQuantity() - 1);
                     log.log(menu.getName() + " " + menu.getLocation() + " $" + menu.getPrice() + " $" + balance);
-                    return "Here's your " + menu.getName()+ "\n" + menu.sounds() + "\n" +"Balance Remaining $" + balance + "\n";
+                    return "Here's your " + menu.getName() + "\n" + menu.sounds() + "\n" + "Balance Remaining $" + balance + "\n";
                 } else if (balance <= menu.getPrice()) {
                     return "You don't have enough money for " + menu.getName() + "\n";
                 }
-            } else {
-                return "Cannot find that location" + "\n";
             }
         }
-        return "Invalid Entry";
+        return "hmmm";
     }
-
 }

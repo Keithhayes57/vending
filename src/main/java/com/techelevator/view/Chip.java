@@ -6,7 +6,7 @@ public class Chip extends Snack {
         return "Crunch Crunch, Yum!";
     }
 
-    public Chip(String name, String location, double price, int quantity) {
-        super(name, location, price, quantity);
+    public Chip(String location, String name, double price, int quantity) {
+        super(location,name, price, quantity);
     }
 }

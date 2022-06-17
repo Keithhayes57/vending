@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class VendingMachineCLI {
@@ -17,7 +18,7 @@ public class VendingMachineCLI {
 	private static final String[] MAIN_MENU_OPTIONS = {MAIN_MENU_OPTION_DISPLAY_ITEMS, MAIN_MENU_OPTION_PURCHASE, MAIN_MENU_OPTIONS_EXIT};
 	private double balance = 0; // future reference for FEED Money staring balance
 	private Menu menu;
-	private Inventory inventory = new Inventory(new File("vendingmachine.csv"));
+	private Inventory inventory = new Inventory(new File("capstone-1/vendingmachine.csv"));
 	private Logger log = new Logger();
 	FeedMoney feedMoney = new FeedMoney();
 
@@ -34,6 +35,7 @@ public class VendingMachineCLI {
 		return purchaseMenu;
 	}
 
+
 	public VendingMachineCLI(Menu menu) {                    // ,purchaseMenu purchaseMenu?
 		this.menu = menu;
 
@@ -47,6 +49,7 @@ public class VendingMachineCLI {
 				inventory.displayInventory();//System.out.println(inventory.stockList());// display vending machine items
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				do {
+					System.out.println("Current Money : " + balance);
 					int choice2 = purchaseMenu2.PurchaseMenu2();
 
 					switch (choice2) {
@@ -60,14 +63,22 @@ public class VendingMachineCLI {
 							inventory.displayInventory();
 							System.out.println();
 							System.out.println("Balance: $" + balance);
+							//balance = purchaseMenu2.getBalance();
 							System.out.println("Enter a location: ");
-							String location = input.nextLine().toUpperCase();
-							System.out.println(purchaseMenu2.secondOption(location, balance));
-
+							String location = input.nextLine().toUpperCase(Locale.ROOT);
+							String message = purchaseMenu2.secondOption(location, balance);
+							System.out.println(message);
+							for (Snack menu : inventory.getInventory()) {
+								//if(message.contentEquals("You don't have enough money for " + menu.getName() + "\n") || "Sold Out")
+								if (location.contentEquals(menu.getLocation()) && menu.getPrice() <= balance && menu.getQuantity() >0 ) {
+									menu.setQuantity(menu.getQuantity() - 1);
+									balance -= menu.getPrice();
+								}
+							}
 							choice = MAIN_MENU_OPTION_PURCHASE;
 							break;
 						case 3:
-							System.out.println("Your change is $" + purchaseMenu.getBalance());
+							System.out.println("Your change is $" + balance);
 							log.log("Give Change : " + "$"+ balance + " " + "$0.00");
 							choice = MAIN_MENU_OPTIONS_EXIT;
 							break;

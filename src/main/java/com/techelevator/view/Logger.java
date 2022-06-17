@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 public class Logger {
     public  void log (String message){
 
-        File logFile = new File("src/main/resources/placeholder.txt");
+        File logFile = new File("/Users/jessegoodrum/Desktop/Merit America/Captstone Try 3/capstone-1/src/main/resources/placeholder.txt");
 
         boolean fileExit= logFile.exists()? true:false;
 
