@@ -11,7 +11,9 @@ public class PurchaseMenu extends Menu {
     private static final String PURCHASE_MAIN_MENU_OPTION_SELECT_PRODUCT = "Select Product";
     private static final String PURCHASE_MAIN_MENU_OPTIONS_FINISH_TRANSACTION = "Finish Transaction";
     public static final String[] PURCHASE_MAIN_MENU_OPTIONS = { Purchase_MAIN_MENU_OPTION_FEED_MONEY, PURCHASE_MAIN_MENU_OPTION_SELECT_PRODUCT, PURCHASE_MAIN_MENU_OPTIONS_FINISH_TRANSACTION };
-    private double balance = 0;
+
+    private FeedMoney feed = new FeedMoney();
+    private double balance = feed.totalMoney;
     private Scanner input = new Scanner(System.in);
     private Inventory inventory = new Inventory(new File("C:\\Users\\Keithhaye57\\OneDrive\\Desktop\\Week1\\Capstone 615\\capstone-1\\vendingmachine.csv"));
     private Logger log = new Logger();
@@ -67,12 +69,14 @@ public class PurchaseMenu extends Menu {
         System.out.println();
         System.out.println("Enter a location: ");
         System.out.println("Balance: $" + balance);
-        String location = input.nextLine();
+        String location = input.nextLine().toUpperCase();
         for (Snack menu : inventory.getInventory()){
             if(location.contentEquals(menu.getLocation())){
                 location = menu.getLocation();
                 if(menu.getQuantity() == 0){
                     System.out.println("Sold Out");
+                    System.out.println();
+                    break;
                 }else if (balance >= menu.getPrice()){
                     balance -= menu.getPrice();
                     System.out.println("Here's your " + menu.getName());
@@ -82,13 +86,22 @@ public class PurchaseMenu extends Menu {
                     System.out.println(); //Feed money
                     menu.setQuantity(menu.getQuantity()-1);
                     log.log(menu.getName() + " " + menu.getLocation() + " $"+ menu.getPrice() + " $" + balance);
+                    System.out.println();
+                    break;
 
                 }else if(balance <= menu.getPrice()){
                     System.out.println("You don't have enough money for " + menu.getName());
-                }else{
-                    System.out.println("Cannot find that location");
+                    System.out.println();
+                    break;
                 }
             }
+            else {
+                System.out.println("Cannot find that location");
+                System.out.println();
+                break;
+            }
+
+
         }
     }
 

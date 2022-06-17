@@ -22,6 +22,9 @@ public class VendingMachineCLI {
 	FeedMoney feedMoney = new FeedMoney();
 
 	private PurchaseMenu purchaseMenu = new PurchaseMenu(InputStream.nullInputStream(), OutputStream.nullOutputStream());
+	private PurchaseMenu2 purchaseMenu2 = new PurchaseMenu2();
+
+	private Scanner input = new Scanner(System.in);
 
 	public Inventory getInventory() {
 		return inventory;
@@ -44,17 +47,25 @@ public class VendingMachineCLI {
 				inventory.displayInventory();//System.out.println(inventory.stockList());// display vending machine items
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				do {
-					int choice2 = purchaseMenu.PurchaseMenu();
+					int choice2 = purchaseMenu2.PurchaseMenu2();
 
 					switch (choice2) {
 						case 1:
 							double money = feedMoney.FeedMoney();
-							purchaseMenu.setBalance(money);
-							balance = purchaseMenu.getBalance();
-							log.log("Feed Money: " + " " + money + " $" + purchaseMenu.getBalance() + " "  );
+							purchaseMenu2.setBalance(money);
+							balance = purchaseMenu2.getBalance();
+							log.log("Feed Money: " + " " + money + " $" + purchaseMenu2.getBalance() + " "  );
 							break;
 						case 2:
-							purchaseMenu.secondOption();
+							inventory.displayInventory();
+							System.out.println();
+							System.out.println("Balance: $" + balance);
+							System.out.println("Enter a location: ");
+							String location = input.nextLine().toUpperCase();
+							System.out.println(purchaseMenu2.secondOption(location, balance));
+
+							choice = MAIN_MENU_OPTION_PURCHASE;
+							break;
 						case 3:
 							System.out.println("Your change is $" + purchaseMenu.getBalance());
 							log.log("Give Change : " + "$"+ balance + " " + "$0.00");
@@ -65,8 +76,9 @@ public class VendingMachineCLI {
 							System.out.println("Invalid menu choice; try again.");
 							break;
 					}
-				} while (choice.equals(MAIN_MENU_OPTION_PURCHASE));
-				break;
+				} while(choice.equals(MAIN_MENU_OPTION_PURCHASE));{
+
+				break;}
 
 
 
