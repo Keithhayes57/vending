@@ -12,15 +12,16 @@ public class Inventory {
     final File INVENTORY_FILE;
     private List<Snack> snackList = new ArrayList<>(); // make a string list ?
 
-    public Inventory(File Inventory){
+    public Inventory(File Inventory){ //  stocks machine upon creation of inventory
         this.INVENTORY_FILE = Inventory;
         try{
             this.stockList();
-        }catch (FileNotFoundException e){
-
+        }catch (FileNotFoundException e){ //  if stock list file is not found
+            System.out.println("could not find vending machine stock");
         }
     }
-    public void stockList() throws FileNotFoundException{
+
+    public void stockList() throws FileNotFoundException{ //  creates the stock list by iterating through the vending machine file and grabbing info delimited by a pipe
         try(Scanner scan = new Scanner(INVENTORY_FILE)){
             while(scan.hasNextLine()){
                 String line = scan.nextLine();
@@ -47,12 +48,11 @@ public class Inventory {
         }
     }
 
-
-
     public List<Snack> getInventory(){
         return snackList;
     }
-    public void displayInventory(){
+
+    public void displayInventory(){ // used for displaying the snacks in machine in string format;
 
         for(Snack snack : snackList){
 

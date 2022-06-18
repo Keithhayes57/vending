@@ -14,13 +14,6 @@ public class Menu {
 		this.out = new PrintWriter(output);
 		this.in = new Scanner(input);
 	}
-	public static void purchaseMenu(){
-		System.out.println("1) Feed Money");
-		System.out.println("2) Select Product");
-		System.out.println("3) Finish Transaction");
-		System.out.println();
-		System.out.println("Current Money : ");
-	}
 	public Object getChoiceFromOptions(Object[] options) {
 		Object choice = null;
 		while (choice == null) {
