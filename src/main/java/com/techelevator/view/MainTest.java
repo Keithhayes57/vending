@@ -1,14 +1,9 @@
 package com.techelevator.view;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
 
 import java.io.File;
 
-public class PurchaseMenu2Test {
-
-    @Test
-    public void shouldReturnSoldOut() {
+public class MainTest {
+    public static void main(String[] args) {
         String message = "";
         FeedMoney feedMoney = new FeedMoney();
         feedMoney.setTotalMoney(10);
@@ -18,9 +13,7 @@ public class PurchaseMenu2Test {
         test.doPurchase("A1", 10);
         test.doPurchase("A1", 10);
         test.doPurchase("A1", 10);
-       message =  test.doPurchase("A1", 10);
-       String expected =  "Sold Out";
-
-        Assert.assertEquals(expected, message);
+        message =  test.doPurchase("A1", 10);
+        System.out.println(message);
     }
 }
