@@ -145,3 +145,47 @@ java.text.SimpleDateFormat@4615fbc1 Give Change : $10.0 $0.00
 06/17/2022 10:13:57 PM Feed Money:  2.0 $2.00 
 06/17/2022 10:14:01 PM Little League Chew D2 $0.95 $1.05
 06/17/2022 10:14:03 PM Give Change : $1.05 $0.00
+06/18/2022 12:36:56 PM Feed Money:  10.0 $10.00 
+06/18/2022 12:37:02 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:37:07 PM Give Change : $6.95 $0.00
+06/18/2022 12:41:43 PM Feed Money:  10.0 $10.00 
+06/18/2022 12:41:45 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:41:47 PM Give Change : $6.95 $0.00
+06/18/2022 12:46:24 PM Feed Money:  10.0 $10.00 
+06/18/2022 12:46:27 PM Triplemint D4 $0.75 $9.25
+06/18/2022 12:46:29 PM Give Change : $9.25 $0.00
+06/18/2022 12:46:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:46:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:46:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:46:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:46:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:48:19 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:48:19 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:48:19 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:48:19 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:48:19 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:49:47 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:49:47 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:49:47 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:49:47 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:49:47 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:12 PM Feed Money:  10.0 $10.00 
+06/18/2022 12:52:16 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:52:53 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:08 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:08 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:08 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:08 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:08 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:08 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:24 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:24 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:24 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:24 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:24 PM Potato Crisps A1 $3.05 $6.95
+06/18/2022 12:54:24 PM Potato Crisps A1 $3.05 $6.95

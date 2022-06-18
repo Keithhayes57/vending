@@ -86,6 +86,7 @@ public class VendingMachineCLI {
 			}
 			else if(choice.equals(MAIN_MENU_OPTIONS_EXIT)){ //  if user chooses to exit and does not do anything
 				System.out.println("Bye");
+				input.close();
 				break;
 			}
 		}
@@ -95,5 +96,6 @@ public class VendingMachineCLI {
 		Menu menu = new Menu(System.in, System.out);
 		VendingMachineCLI cli = new VendingMachineCLI(menu);
 		cli.run();
+
 	}
 }
