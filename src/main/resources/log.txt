@@ -93,3 +93,25 @@ java.text.SimpleDateFormat@4615fbc1 Give Change : $10.0 $0.00
 06/17/2022 08:17:31 PM Feed Money:  6.050000000000001 $6.05 
 06/17/2022 08:17:35 PM Potato Crisps A1 $3.05 $3.00
 06/17/2022 08:17:47 PM Give Change : $3.00 $0.00
+06/17/2022 08:49:38 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:49:39 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:49:39 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:49:39 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:49:39 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:51:47 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:51:47 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:51:47 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:51:47 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:51:47 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:52:38 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:52:38 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:52:38 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:52:38 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 08:52:38 PM Potato Crisps A1 $3.05 $6.95
+06/17/2022 09:07:52 PM Feed Money:  1.0 $1.00 
+06/17/2022 09:07:56 PM Give Change : $1.00 $0.00
+06/17/2022 09:09:21 PM Feed Money:  1.0 $1.00 
+06/17/2022 09:09:29 PM Give Change : $1.00 $0.00
+06/17/2022 09:18:04 PM Give Change : $0.00 $0.00
+06/17/2022 09:25:21 PM Feed Money:  1.0 $1.00 
+06/17/2022 09:25:34 PM Give Change : $1.00 $0.00

@@ -21,7 +21,7 @@ public class Logger {
             writer.println(formattedDate +" "+message);
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            System.out.println("Log Not Found");
         }
 
 

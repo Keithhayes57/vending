@@ -41,7 +41,7 @@ public class VendingMachineCLI {
 					System.out.println();
 					System.out.println("Current Balance : $" + formatter.format(balance));// shows initial balance
 					System.out.println();
-					int choice2 = purchaseMenu2.PurchaseMenu2(); //  gets purchase menu choice from user
+					int choice2 = purchaseMenu2.purchaseMenu2(); //  gets purchase menu choice from user
 
 					switch (choice2) {
 						case 1: //  if user chooses 1

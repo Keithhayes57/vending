@@ -14,7 +14,7 @@ public class PurchaseMenu2 {
     private double balance = feed.totalMoney;
     NumberFormat formatter = new DecimalFormat("#0.00");
     private Scanner input = new Scanner(System.in);
-    private Inventory inventory = new Inventory(new File("/Users/jessegoodrum/Desktop/Merit America/Captstone Try 3/capstone-1/vendingmachine.csv"));
+    private Inventory inventory = new Inventory(new File("capstone-1/vendingmachine.csv"));
     private Logger log = new Logger();
 
     public double getBalance() {
@@ -25,7 +25,7 @@ public class PurchaseMenu2 {
         this.balance = balance;
     }
 
-    public int PurchaseMenu2() { //  prompts user to choose option and returns their option as int
+    public int purchaseMenu2() { //  prompts user to choose option and returns their option as int
 
         System.out.println("1) Feed Money");
         System.out.println("2) Select Product");
