@@ -31,7 +31,7 @@ public class PurchaseMenu2Test {
         feedMoney.setTotalMoney(10);
         PurchaseMenu2 test = new PurchaseMenu2();
 
-        message =  test.doPurchase("A6", 10);
+        message =  test.doPurchase("A7", 10);
         String expected =  "Not A Valid Selection, Try Again!";
 
         Assert.assertEquals(expected, message);

@@ -49,7 +49,7 @@ public class VendingMachineCLI {
 							feedMoney.setYOrN(true); //  resets to allow user to add more money
 							purchaseMenu2.setBalance(money); // sets balance to the fed money for the purchaseMenu
 							balance = purchaseMenu2.getBalance(); // updates this class balance
-							log.log("Feed Money: " + " " + money + " $" + formatter.format(balance) + " "  ); //  logs the money being fed
+							log.log("Feed Money: " + " $" + formatter.format(money) + " $" + formatter.format(balance) + " "  ); //  logs the money being fed
 							break; //  breaks out of case and allows user to choose option again
 						case 2: //  when user chooses to purchase items
 							inventory.displayInventory(); //  displays the inventory
